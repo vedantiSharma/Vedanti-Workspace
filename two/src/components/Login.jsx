@@ -7,7 +7,11 @@ const Login = () =>{
      <Container  maxW={"container.xl"} h={"100vh"} p={"16"}>
 
             <form>
-                <VStack alignItems={"stretch"} spacing={"8"} w={[ "full","96"]} m={"auto"} my={"16"}>
+                <VStack alignItems={"stretch"}
+                 spacing={'8'} 
+                 w={[ "full","96"]}
+                  m={'auto'}
+                   my={'16'}>
                     <Heading>Welcome Back...</Heading>
                     <Input
                         placeholder={"Email"} type={"email"}
@@ -38,12 +42,6 @@ const Login = () =>{
                 </VStack>
 
             </form>
-
-
-
-
-
-
 
      </Container>
 
