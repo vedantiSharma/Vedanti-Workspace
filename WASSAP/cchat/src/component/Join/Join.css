@@ -1,0 +1,58 @@
+.JoinPage{
+    background: rgb(31, 29, 29);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.JoinContainer{
+   height: 50%;
+   width: 50% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.JoinContainer >h1{
+    color: white;
+    font-size: 3vmax;
+    width: 25vmax;
+    border-bottom: 0.2vmax solid white;
+    font-family: "Roboto";
+    text-align: center;
+    padding: 1vmax;
+   box-sizing: border-box;
+
+}
+
+#joinInput{
+
+    width: 25vmax;
+    padding : 1.5vmax;
+    border: none;
+    
+    outline: none;
+    margin: 1vmax;
+    box-sizing: border-box ;
+}
+
+.joinbtn{
+    
+    width: 25vmax;
+    padding : 1.5vmax;
+    border: none;
+    color: white;
+    font-family: "Roboto";
+   
+    outline: none;
+    background-color:  pink;
+    box-sizing: border-box;
+    transition: all 0.3s;
+  cursor: pointer;
+}
+
+.joinbtn:hover{
+    background: rgb(244, 160, 174);
+}
