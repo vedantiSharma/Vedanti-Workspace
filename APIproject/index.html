@@ -15,7 +15,7 @@
             <input type = "text" name ="" id="nameid"/>
         
       </div>
-      <div class="imgdiv">
+      <div class="pitogram">
         <img src="img.png" width="200" height="200" class="imgchange">   
       </div>
       <button>Click me</button>
@@ -23,17 +23,17 @@
     </div>
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src='https://luciorubeens.github.io/pictogrify/dist/pictogrify.js'></script>    
 
 <script>
     $(document).ready(function(){
      $('button').click(function(){
       const name = $('#nameid').val();
       alert(name);
-      $('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+      $('.imgchange').attr('src',`'<iframe style="border: none;" src="https://cards.producthunt.com/cards/products/390034" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>`);
       const b = $('.imgchange');
       console.log(b);
-   
+  
      });
     });
    </script>
