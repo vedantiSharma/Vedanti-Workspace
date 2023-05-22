@@ -1,23 +1,35 @@
-        CREATE TABLE restaurants(
-            id INT ,
-            name VARCHAR(50),
-            location VARCHAR(50),
-            price_range INT
-        );
+       
+    --    creating table
+        CREATE TABLE restaurants (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  price_range INTEGER
+);
 
-        INSERT INTO restaurants(id ,name , location , price_range) values ( "23" ,"pizahut" , "dubai"  , "4");
+        SELECT * FROM newrestaurants;
+
+        INSERT INTO restaurants(name , location , price_range) values (  'wendys', 'new york'  , 4);
 
 
-        INSERT INTO restaurants(id , name , location , price_range) values ('12' , 'mcdonalds' , 'dubai', '4');
+ 
 
 
-
-
+--  insert values in table
 INSERT INTO restaurants (id, name, location, price_range)
-VALUES (1, 'Restaurant A', 'City X', 4),
-       (2, 'Restaurant B', 'City Y', 4),
-       (3, 'Restaurant C', 'City Z', 4),
-       (4, 'Restaurant D', 'City X', 4),
-       (5, 'Restaurant E', 'City Y', 4);
+VALUES (1, 'mcDonalds', 'dubai', 4),
+      
+       (2, 'pizzaHut', 'new york', 4);
 
 
+-- DELETE data from the data
+    DELETE FROM restaurants WHERE location = 'new york';
+
+
+-- insert and show data at the same time
+    INSERT INTO restaurants (id, name, location, price_range)
+VALUES (4, 'cheescake', 'hawai', 5) returning * ;
+
+
+
+update restaurants set name = 'red losbter' , location = 'miami' , price_range = 2 where id = 'null'
