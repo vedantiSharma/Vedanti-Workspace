@@ -7,9 +7,9 @@
   price_range INTEGER
 );
 
-        SELECT * FROM newrestaurants;
+        SELECT * FROM restaurants;
 
-        INSERT INTO restaurants(name , location , price_range) values (  'wendys', 'new york'  , 4);
+        INSERT INTO restaurants(name , location , price_range) values (  'muffins', 'san francis'  , 4);
 
 
  
@@ -23,7 +23,7 @@ VALUES (1, 'mcDonalds', 'dubai', 4),
 
 
 -- DELETE data from the data
-    DELETE FROM restaurants WHERE location = 'new york';
+    DELETE FROM restaurants WHERE location = 'london';
 
 
 -- insert and show data at the same time
