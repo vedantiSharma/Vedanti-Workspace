@@ -1,0 +1,54 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+def fetch_services(topmate_profile):
+    # Make a GET request to fetch the profile page
+    response = requests.get(topmate_profile)
+    
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Find the elements containing the services
+        service_elements = soup.find_all('div', class_='service-box')
+        
+        services = []
+        
+        # Extract service information from each element
+        for element in service_elements:
+            service_name = element.find('h3').text
+            service_description = element.find('p').text
+            
+            # Add the service to the list
+            services.append({
+                'name': service_name,
+                'description': service_description
+            })
+            
+        return services
+    
+    else:
+        print('Error fetching the profile page.')
+        return []
+
+def build_services_page(services):
+    # Build an HTML page to display the services
+    page_content = '<html><head><title>Topmate Services</title></head><body>'
+    
+    # Add each service to the page
+    for service in services:
+        service_html = f'<h2>{service["name"]}</h2><p>{service["description"]}</p>'
+        page_content += service_html
+    
+    page_content += '</body></html>'
+    
+    return page_content
+
+# Example usage
+topmate_profile_url = 'https://topmate.io/ankit'
+services = fetch_services(topmate_profile_url)
+page_content = build_services_page(services)
+
+# Write the page content to a file
+with open('topmate_services.html', 'w') as file:
+    file.write(page_content)
